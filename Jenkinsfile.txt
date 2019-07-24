@@ -13,7 +13,6 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'gradle clean'
         sh 'gradle build'
         sh 'echo $USER'
         sh 'echo whoami'
