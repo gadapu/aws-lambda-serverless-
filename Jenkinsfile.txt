@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-        maven 'MAVEN_HOME'
+        gradle 'GRADLE_HOME'
         jdk 'JAVA_HOME'
   }
   stages {
@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'mvn -B -DskipTests clean package'
+        sh 'gradle clean'
         sh 'echo $USER'
         sh 'echo whoami'
       }
